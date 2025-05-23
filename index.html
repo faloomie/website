@@ -6,20 +6,37 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ <div id="top"></div>
+	
+<div id="bg1" class="bg-layer"></div>
+<div id="bg2" class="bg-layer"></div>
 
 
 <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close" onclick="closeLightbox()">&times;</span>
-  <span class="lightbox-arrow left" onclick="prevImage()">&#10094;</span>
-  <img id="lightbox-img" src="">
-  <span class="lightbox-arrow right" onclick="nextImage()">&#10095;</span>
-  <p id="lightbox-caption"></p>
+<div id="lightbox" class="lightbox" onclick="outsideClick(event)">
+  <div class="lightbox-content">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+
+    <!-- Image -->
+    <img id="lightbox-img" class="lightbox-media" src="" alt="">
+
+    <!-- Video -->
+    <video id="lightbox-video" playsinline autoplay loop muted>
+      <source id="lightbox-video-source" src="" type="video/mp4">
+    </video>
+
+    <p id="lightbox-caption"></p>
+
+    <!-- Arrows -->
+    <span class="lightbox-arrow left" onclick="prevImage()">&#10094;</span>
+    <span class="lightbox-arrow right" onclick="nextImage()">&#10095;</span>
+  </div>
 </div>
+
+
 
   
 
-</div>
 
 
 	<header class="site-header">
@@ -36,76 +53,90 @@
     
   </header>
 
-  <section class="showreel">
+  <section class="showreel" data-bg="images/red.jpg">
     <h2>Showreel</h2>
     <!-- Example embedded video -->
     <video controls>
-      <source src="videos/showreel.mp4" type="video/mp4">
+      <source src="videos/showreelfinal.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </section>
 
 
-<section id="animation" class="portfolio">
+<section id="animation" class="portfolio" data-bg="images/yellow.jpg">
   <h1>Animation</h1>
   <div class="image-grid">
     <!-- 9 project items here... -->
   
     <div class="image-item">
-      <img 
-  src="images/cm-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+      <img src="images/cm-thumb.jpg" 
+     alt="Idle loop" 
+     data-full="videos/kurtin_alex_ap_cm.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
        
     </div>
     <div class="image-item">
       <img src="images/sq-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-3.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/squirrel_loop.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
       <img src="images/hooked-1-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/gf_alexkurtin_group_11_hooked.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
       <img src="images/mush-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/mushroomloop.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
       <img src="images/walkcycle-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/walkcyclewhitebgmp4.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
       <img src="images/medusa-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/medusaloop.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
       <img src="images/ink-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     alt="Idle loop" 
+     data-full="videos/inkanimation.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
-      <img src="images/animtest-thumb.jpg" 
-  alt="Project 1" 
-  data-full="images/obsv-2.jpg"
-  onclick="openLightbox(this)">
+     <img src="images/animtest-thumb.jpg" 
+     alt="Idle loop" 
+     data-full="videos/fishtest.mp4" 
+     data-type="video" 
+     onclick="openLightbox(this)">
+
        
     </div>
     <div class="image-item">
@@ -119,7 +150,12 @@
   
 </section>
 
-<section id="life-drawing" class="portfolio">
+	<div class="back-to-top">
+  <a href="#">↑ Back to Top</a>
+</div>
+<a href="#top" class="back-to-top">↑ Back to Top</a>
+	
+<section id="life-drawing" class="portfolio" data-bg="images/green.jpg">
   <h1>Life Drawing</h1>
   <div class="image-grid">
     <!-- 9 project items here... -->
@@ -192,8 +228,12 @@
   
 </section>
 
+	<div class="back-to-top">
+  <a href="#">↑ Back to Top</a>
+</div>
 
-<section id="character-design" class="portfolio">
+
+<section id="character-design" class="portfolio" data-bg="images/blue.jpg">
   <h1>Observational</h1>
   <div class="image-grid">
     <!-- 9 project items here... -->
@@ -266,7 +306,12 @@
   
 </section>
 
-<section class="portfolio">
+	<div class="back-to-top">
+  <a href="#">↑ Back to Top</a>
+</div>
+
+	
+<section class="portfolio" data-bg="images/purple.jpg">
   <h1>Gestural</h1>
   <div class="image-grid">
     <!-- 9 project items here... -->
@@ -339,7 +384,12 @@
   
 </section>
 
-<section id="about-me" class="about-me">
+	<div class="back-to-top">
+  <a href="#">↑ Back to Top</a>
+</div>
+
+	
+<section id="about-me" class="about-me" data-bg="images/pink.jpg">
   <div class="about-content">
     <div class="about-text">
       <h2>About Me</h2>
@@ -360,37 +410,61 @@
   </div>
 </section>
 
+	<div class="back-to-top">
+  <a href="#">↑ Back to Top</a>
+</div>
+
 
 <script>
 let currentImageIndex = 0;
 const galleryImages = Array.from(document.querySelectorAll('.image-item img'));
 
-function openLightbox(imgEl) {
-  const fullSrc = imgEl.getAttribute("data-full");
-  const caption = imgEl.getAttribute("alt") || "";
-  
-  document.getElementById("lightbox").classList.add("active");
-  document.getElementById("lightbox-img").src = fullSrc;
+function openLightbox(el) {
+  const type = el.getAttribute("data-type");
+  const fullSrc = el.getAttribute("data-full");
+  const caption = el.getAttribute("alt") || "";
+
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  const video = document.getElementById("lightbox-video");
+  const videoSrc = document.getElementById("lightbox-video-source");
+
+  lightbox.classList.add("active");
   document.getElementById("lightbox-caption").innerText = caption;
 
-  currentImageIndex = galleryImages.indexOf(imgEl);
+  // Reset both
+  img.style.display = "none";
+  video.style.display = "none";
+  video.pause();
+  video.currentTime = 0;
+
+  if (type === "video") {
+    videoSrc.src = fullSrc;
+    video.load();
+    video.style.display = "block";
+  } else {
+    img.src = fullSrc;
+    img.style.display = "block";
+  }
+
+  currentImageIndex = galleryImages.indexOf(el);
 }
 
 function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-  document.getElementById("lightbox-img").src = "";
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  const video = document.getElementById("lightbox-video");
+
+  lightbox.classList.remove("active");
+  img.src = "";
+  video.pause();
+  video.src = "";
   document.getElementById("lightbox-caption").innerText = "";
 }
 
 function showImageAt(index) {
   if (index >= 0 && index < galleryImages.length) {
-    const imgEl = galleryImages[index];
-    const fullSrc = imgEl.getAttribute("data-full");
-    const caption = imgEl.getAttribute("alt") || "";
-
-    document.getElementById("lightbox-img").src = fullSrc;
-    document.getElementById("lightbox-caption").innerText = caption;
-    currentImageIndex = index;
+    openLightbox(galleryImages[index]);
   }
 }
 
@@ -407,19 +481,79 @@ function prevImage() {
 }
 
 document.addEventListener("keydown", (e) => {
-  if (!document.getElementById("lightbox").classList.contains("active")) return;
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox.classList.contains("active")) return;
 
   if (e.key === "ArrowRight") nextImage();
   if (e.key === "ArrowLeft") prevImage();
   if (e.key === "Escape") closeLightbox();
 });
+
+function outsideClick(event) {
+  const content = document.querySelector(".lightbox-content");
+  if (!content.contains(event.target)) {
+    closeLightbox();
+  }
+}
+</script>
+
+<script>
+const sections = document.querySelectorAll('section[data-bg]');
+const bg1 = document.getElementById('bg1');
+const bg2 = document.getElementById('bg2');
+let activeBg = bg1;
+
+function fadeToBackground(imageUrl) {
+  const nextBg = (activeBg === bg1) ? bg2 : bg1;
+
+  nextBg.style.backgroundImage = `url('${imageUrl}')`;
+  nextBg.style.opacity = '1';
+  activeBg.style.opacity = '0';
+
+  activeBg = nextBg;
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const url = entry.target.getAttribute('data-bg');
+        fadeToBackground(url);
+      }
+    });
+  },
+  {
+    rootMargin: '0px 0px -90% 0px'
+  }
+);
+
+sections.forEach(section => observer.observe(section));
+</script>
+
+<script>
+  const showreelVideo = document.querySelector(".showreel video");
+  const showreelHeader = document.querySelector(".showreel h2");
+
+  showreelVideo.addEventListener("play", () => {
+    showreelHeader.classList.add("paused");
+  });
+
+  showreelVideo.addEventListener("pause", () => {
+    showreelHeader.classList.remove("paused");
+  });
+
+  showreelVideo.addEventListener("ended", () => {
+    showreelHeader.classList.remove("paused");
+  });
 </script>
 
 
 
 
 
-</script>
+
+
+
 
 </body>
 </html>
